@@ -16,15 +16,20 @@ namespace Mvc_Tarea_Alimentos.Controllers
         {
             return View();
         }
+        public ActionResult Alta()
+        {
+            return View();
+        }
         [HttpPost]
-        public ActionResult Alta(Alimento alimento)
+        public ActionResult DarAlta(Alimento alimento)
         {
             alimentoServicio.Alta(alimento);
             return RedirectToAction("Todos");
         }
         public ActionResult Todos()
         {
-            return View();
+            List<Alimento>alimentos= alimentoServicio.Todos();
+            return View(alimentos);
         }
         public ActionResult Editar(Alimento alimento)
         {
