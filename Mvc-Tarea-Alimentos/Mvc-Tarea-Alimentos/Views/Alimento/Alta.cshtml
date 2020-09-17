@@ -6,7 +6,13 @@
 <h2>Alta</h2>
 
 <form action="/Alimento/DarAlta" method="post">
-    <input type="text" name="nombre"/>
-    <input type="text" name="peso"/>
-    <input type="submit" value="Enviar"/>
+    <div class="form-group">
+    <input class="form-control"type="text" name="nombre" placeholder="Nombre del alimento"/>
+    </div>
+    <div class="form-group">
+    <input class="form-control"type="text" name="peso" placeholder="Peso del alimento"/>
+    </div>
+    <div class="form-group">
+    <input class="btn btn-success"type="submit" value="Enviar" />
+    </div>
 </form>

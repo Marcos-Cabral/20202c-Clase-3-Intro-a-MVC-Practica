@@ -31,6 +31,12 @@ namespace Mvc_Tarea_Alimentos.Controllers
             List<Alimento>alimentos= alimentoServicio.Todos();
             return View(alimentos);
         }
+         public ActionResult Editar(int id)
+        {
+            Alimento alimento = alimentoServicio.buscarPorId(id);
+            return View(alimento);
+        }
+        [HttpPost]
         public ActionResult Editar(Alimento alimento)
         {
             alimentoServicio.Editar(alimento);

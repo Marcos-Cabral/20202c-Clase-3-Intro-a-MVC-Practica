@@ -6,28 +6,36 @@
 
 <h2>Todos</h2>
 
-<table>
+<table class="table">
+    <thead>
     <tr>
-        <th>Nombre</th>
-        <th>Peso</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Peso</th>
+        <th scope="col">Accion</th>
+        <th scope="col">Accion</th>
     </tr>
+    </thead>
+    <tbody>
 
     @foreach (Alimento ali in Model)
     {
-<tr>
-    <td>
-        @ali.nombre
-    </td>
+        <tr>
+            <td>
+                @ali.nombre
+            </td>
 
-    <td>
-        @ali.peso
-    </td>
-    <td>
-        <a href="/Alimento/Editar/@ali.id">Editar</a>
-    </td>
-    <td>
-        <a href="/Alimento/Borrar/@ali.id">Borrar</a>
-    </td>
-</tr>            }
-
+            <td>
+                @ali.peso
+            </td>
+            <td>
+                <a class="btn btn-warning" href="/Alimento/Editar/@ali.id">Editar</a>
+            </td>
+            <td>
+                <a class="btn btn-danger" href="/Alimento/Borrar/@ali.id">Borrar</a>
+            </td>
+        </tr>
+     }
+    </tbody>
 </table>
+<br /><br /><br />
+<a href="/Alimento/Alta">Agregar otro alimento</a>
